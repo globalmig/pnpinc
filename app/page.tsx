@@ -1,0 +1,139 @@
+"use client";
+
+import Link from "next/link";
+import React from "react";
+import Image from "next/image";
+import Contact from "@/components/common/Contact";
+
+export default function page() {
+  return (
+    <>
+      <section className="bg-[url('/images/hero_bg2.png')] bg-cover bg-center bg-no-repeat">
+        <div className="w-full max-w-[1440px] mx-auto relative h-[800px]">
+          <div className="main-text absolute top-60 left-10">
+            <h2 className="text-white font-bold text-5xl">
+              월 <span className="text-[#F93333] pr-2">매출 1억</span>달성
+            </h2>
+
+            <p className="text-white font-bold text-2xl mt-4">
+              <span className="text-[#F93333]">월 매출 200%</span> 달성
+              <br />맛 100% 보장 브랜드
+            </p>
+            <Link href="/" className="border-white hover:border-[#F93333] border py-2 px-20 rounded-md inline-flex items-center gap-2 font-medium text-white hover:bg-[#F93333] transition mt-10">
+              문의하기
+              <span aria-hidden="true" className="text-[#F93333]">
+                &gt;
+              </span>
+            </Link>
+          </div>
+          {/* TODO: main_logo.png 추가해야함ㅁ */}
+        </div>
+      </section>
+
+      <section className="bg-[url('/images/hero_bg2.png')] bg-cover bg-center bg-no-repeat ">
+        <div className="w-full rounded-t-xl h-auto relative">
+          <Image src={"/images/top_Image.png"} alt={"지붕"} fill className="absolute" />
+        </div>
+
+        <div className="bg-[url('/images/brand_bg_01.png')] bg-cover bg-center bg-no-repeat py-48 px-4">
+          <div className="title-wrap flex text-white justify-between w-full max-w-[1440px] item-center mx-auto items-center">
+            <div className="text-wrap flex items-center gap-10">
+              <Image src={"/images/logo_01.png"} alt="문어전복갈비찜로고" width={100} height={100} />
+              <h2>마시마니 문어&전복갈비찜전문점 창업경쟁력</h2>
+            </div>
+            <p className="text-red-600 text-4xl font-bold">{">"}</p>
+          </div>
+          <div className="cardList max-w-[1440px] mx-auto grid grid-cols-2 md:grid-cols-4  gap-4 my-10">
+            <div className="card bg-white text-center rounded-xl py-10 px-4">
+              <h4 className="font-bold">
+                초보도 가능한 <span className="text-red-600"> 원팩 시스템</span>
+              </h4>
+              <p className="text-sm px-4 break-keep text-light text-black/80">
+                21년 검증된 맛, 초보자도 OK!
+                <br />
+                초간단 원팩시스템의 셋팅하는 조리 운영 시스템
+              </p>
+            </div>
+            <div className="card2 bg-white text-center rounded-xl py-10 px-4">
+              <h4 className="font-bold">
+                <span className="text-red-600"> 억대매출</span> 높은 마진 및 가치성
+              </h4>
+              <p className="text-sm px-4 break-keep text-light text-black/80">중독성 있는 차별화된 창업 아이템으로 경쟁자 없는 성공의 맛을 느껴보실 수 있습니다.</p>
+            </div>
+            <div className="card3 bg-white text-center rounded-xl py-10 px-4">
+              <h4 className="font-bold">
+                계절 영향 없는 <span className="text-red-600"> 안정 매출</span>
+              </h4>
+              <p className="text-sm px-4 break-keep text-light text-black/80">
+                문어·전복 등 프리미엄 재료를 활용한 차별화 메뉴로 <span className="text-red-600">어떤 계절에도 꾸준히 수요</span>가 발생하는 독창적인 메뉴 경쟁력을 갖추고 있습니다.
+              </p>
+            </div>
+            <div className="card4 bg-white text-center rounded-xl py-10 px-4">
+              <h4 className="font-bold">
+                <span className="text-red-600"> 억대매출</span> 높은 마진 및 가치성
+              </h4>
+              <p className="text-sm px-4 break-keep text-light text-black/80">
+                KBS, MBC, SBS, 일본TV 등 약 <span className="text-red-600">50회 이상</span> 방송 및 다양한 언론 보도를 통해브랜드의 대중성·신뢰도가 검증된 외식업체입니다.국내뿐 아니라 싱가포르 등 해외
+                진출 경험도 갖춘 확장성 높은 브랜드입니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[url('/images/hero_bg2.png')] bg-cover bg-center bg-no-repeat  ">
+        <div className="bg-[url('/images/brand_bg_02.png')] bg-cover bg-center bg-no-repeat py-48 px-4 ">
+          <div className="title-wrap flex text-white justify-between w-full max-w-[1440px] item-center mx-auto items-center">
+            <div className="text-wrap flex items-center gap-10">
+              <Image src={"/images/logo_02.png"} alt="문어전복갈비찜로고" width={100} height={100} />
+              <h2>마시마니 흑염소요리전문점 창업경쟁력</h2>
+            </div>
+            <p className="text-red-600 text-4xl font-bold">{">"}</p>
+          </div>
+          <div className="cardList  max-w-[1440px] mx-auto grid grid-cols-2 md:grid-cols-4  gap-4 my-10">
+            <div className="card bg-white text-center rounded-xl py-10 px-4">
+              <h4 className="font-bold">
+                <span className="text-red-600">최소비용</span>으로 <br /> 업종변경 가능 지원
+              </h4>
+              <p className="text-sm px-4 break-keep text-light text-black/80">
+                국밥 브랜드에서 업종변경 후 <span className="text-red-600">월 매출 1억</span> 달성 <span className="text-red-600">독립독점 상권역</span> 절대 보장 시스템
+              </p>
+            </div>
+            <div className="card2 bg-white text-center rounded-xl py-10 px-4">
+              <h4 className="font-bold">
+                <span className="text-red-600">꾸준한 수요</span>있는 <br />
+                창업 아이템
+              </h4>
+              <p className="text-sm px-4 break-keep text-light text-black/80">
+                바쁜 시대에 식사 한 끼로 건강·맛·포만감까지 잡는
+                <br /> 국내 보양식 전문 프랜차이즈.
+              </p>
+            </div>
+            <div className="card3 bg-white text-center rounded-xl py-10 px-4">
+              <h4 className="font-bold">
+                <span className="text-red-600">성장성</span>을 그대로 가져가세요
+              </h4>
+              <p className="text-sm px-4 break-keep text-light text-black/80">
+                경기 영향 적고, 시즌을 타지 않는 보양 메뉴로
+                <br />
+                꾸준한 단골 + 안정적 매출 구조 확보.
+              </p>
+            </div>
+            <div className="card4 bg-white text-center rounded-xl py-10 px-4">
+              <h4 className="font-bold">
+                ONE <span className="text-red-600">교육</span> 시스템
+              </h4>
+              <p className="text-sm px-4 break-keep text-light text-black/80">
+                조리교육 및 실무현장교육 및 <br />
+                실습까지 ONE시스템 <br /> <br /> 단순조리 + 본사 레시피 + 실전 교육 <br /> → 초보 창업자도 빠른 오픈, 빠른 안정화 가능.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <Contact />
+      </section>
+    </>
+  );
+}
