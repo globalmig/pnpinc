@@ -49,10 +49,13 @@ export default function GNB() {
               <Link href="/masimani/octopus">브랜드</Link>
             </li>
             <li>
-              <Link href="/menus">메뉴</Link>
+              <Link href="/menu/octopus">메뉴</Link>
             </li>
             <li>
               <Link href="/location">매장</Link>
+            </li>
+            <li>
+              <Link href="/gallery">갤러리</Link>
             </li>
             <li>
               <Link href="/board">공지사항</Link>
@@ -95,6 +98,9 @@ export default function GNB() {
               </li>
               <li>
                 <Link href="/location">매장</Link>
+              </li>
+              <li>
+                <Link href="/gallery">갤러리</Link>
               </li>
               <li>
                 <Link href="/board">공지사항</Link>

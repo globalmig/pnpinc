@@ -17,17 +17,17 @@ export default function SalesConsultationLayout() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row ">
+    <div className=" flex flex-col md:flex-row md:h-[700px]">
       {/* 왼쪽 섹션 - 히어로 이미지 */}
-      <div className="w-full md:w-1/2 relative overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-100 bg-[url('/images/bg_contact.png')] bg-no-repeat" />
+      <div className="w-full md:w-1/2  relative overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-100 bg-[url('/images/bg_contact.png')] bg-no-repeat " />
 
         <div className="relative z-10 h-full flex flex-col justify-center items-start p-8 md:p-16 text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
             저희가 매출을
             <br />
             올려드리겠습니다!
-          </h1>
+          </h2>
 
           <div className="mt-12">
             <p className="text-2xl md:text-4xl mb-6">
