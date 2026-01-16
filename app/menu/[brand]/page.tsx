@@ -57,7 +57,7 @@ export default function Page() {
           const active = brand === t.key;
 
           return (
-            <div key={t.key} className={cn("py-4 border-b-2", active ? "border-red-500" : "border-white/30")}>
+            <div key={t.key} className={cn("py-4 border-b-2 text-sm md:text-2xl", active ? "border-red-500" : "border-white/30")}>
               <button type="button" onClick={() => onClickTab(t.key)} className={cn("w-full", active ? "text-red-500 font-semibold" : "text-white")}>
                 {t.label}
               </button>

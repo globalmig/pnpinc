@@ -72,7 +72,7 @@ export default function GalleryListPage() {
 
   if (loading) {
     return (
-      <div className="bg-white px-4">
+      <div className="bg-white ">
         <Hero2 bg="/images/board_bg.png" title="마시마니" highlightText="갤러리" title2="" description="마시마니의 다양한 순간을" description2="만나보세요" />
         <div className="max-w-7xl mx-auto py-10 min-h-screen flex items-center justify-center">
           <div className="text-gray-500">로딩 중...</div>
@@ -82,9 +82,9 @@ export default function GalleryListPage() {
   }
 
   return (
-    <div className="bg-white px-4">
+    <div className="bg-white ">
       <Hero2 bg="/images/board_bg.png" title="마시마니" highlightText="갤러리" title2="" description="마시마니의 다양한 순간을" description2="만나보세요" />
-      <div className="max-w-7xl mx-auto py-10">
+      <div className="max-w-7xl mx-auto py-10 px-4">
         {/* 갤러리 그리드 */}
         {gallery.length === 0 ? (
           <div className="text-center py-20 text-gray-500">등록된 갤러리가 없습니다.</div>

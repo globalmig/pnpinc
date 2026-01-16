@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Hero2 from "@/components/common/Hero2";
+import Image from "next/image";
 
 interface Notice {
   id: string;
@@ -84,9 +85,9 @@ export default function BoardListPage() {
   }
 
   return (
-    <div className="bg-white px-4">
+    <div className="bg-white ">
       <Hero2 bg="/images/board_bg.png" title="마시마니" highlightText="공지사항" title2="" description="마시마니의 새로운 소식을" description2="확인해보세요" />
-      <div className="max-w-6xl mx-auto py-10">
+      <div className="max-w-6xl mx-auto py-10 px-4">
         {/* 테이블 */}
         <div className="overflow-x-auto">
           {notices.length === 0 ? (
@@ -96,7 +97,8 @@ export default function BoardListPage() {
               {/* 헤더 */}
               <thead>
                 <tr className="border-t-2 border-b border-gray-300">
-                  <th className="py-4 px-6 text-left text-sm font-medium text-gray-900">번호</th>
+                  {/* <th className="py-4 px-6 text-left text-sm font-medium text-gray-900">번호</th> */}
+                  <th className="py-4 px-6 text-left text-sm font-medium text-gray-900"></th>
                   <th className="py-4 px-6 text-center text-sm font-medium text-gray-900">제목</th>
                   <th className="py-4 px-6 text-right text-sm font-medium text-gray-900">등록일</th>
                 </tr>
@@ -112,7 +114,10 @@ export default function BoardListPage() {
                       onClick={() => handleRowClick(notice.id)}
                       className={`border-b border-gray-200 cursor-pointer hover:bg-gray-50 transition-colors ${index % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
                     >
-                      <td className="py-4 px-6 text-sm text-gray-900">{displayNumber}</td>
+                      {/* <td className="py-4 px-6 text-sm text-gray-900">{displayNumber}</td> */}
+                      <td className="py-4 px-6 text-sm text-gray-900">
+                        <Image src={"/images/logo.png"} alt="마시마니로고" width={40} height={40} />
+                      </td>
                       <td className="py-4 px-6 text-sm text-center text-gray-900">{notice.title}</td>
                       <td className="py-4 px-6 text-sm text-right text-gray-900">{new Date(notice.posted_at).toLocaleDateString("ko-KR")}</td>
                     </tr>

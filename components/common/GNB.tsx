@@ -40,7 +40,7 @@ export default function GNB() {
         <div className="flex justify-between items-center w-full max-w-[1440px] mx-auto text-xl h-24 px-4">
           {/* 로고 */}
           <Link href="/" className="font-bold text-white flex flex-col" onClick={close}>
-            <Image src={"/images/logo.png"} alt="마니마니로고" width={80} height={80} />
+            <Image src={"/images/logo.png"} alt="마시마니로고" width={80} height={80} />
           </Link>
 
           {/* PC 메뉴 */}
@@ -91,10 +91,10 @@ export default function GNB() {
 
             <ul className="flex flex-col gap-4 text-lg">
               <li>
-                <Link href="/brands">브랜드</Link>
+                <Link href="/masimani/octopus">브랜드</Link>
               </li>
               <li>
-                <Link href="/menus">메뉴</Link>
+                <Link href="/menu/octopus">메뉴</Link>
               </li>
               <li>
                 <Link href="/location">매장</Link>
