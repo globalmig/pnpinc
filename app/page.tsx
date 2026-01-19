@@ -61,13 +61,13 @@ export default function page() {
             <Image src="/images/main_logo.png" alt="문어전복갈비찜로고" width={480} height={480} className="hidden md:block" />
           </motion.div>
 
-          <motion.div className="main-text absolute top-60 left-10" initial="hidden" animate="visible" variants={staggerContainer}>
-            <motion.h2 className="text-white font-bold text-[60px] md:text-[80px] lg:text-[100px]" variants={fadeInUp}>
+          <motion.div className="main-text text-center pt-56 md:p-0 px-4 md:absolute md:top-60 md:left-10" initial="hidden" animate="visible" variants={staggerContainer}>
+            <motion.h2 className="text-white font-bold text-[40px] md:text-[80px] lg:text-[100px]" variants={fadeInUp}>
               월 <span className="text-[#F93333] pr-2">매출 1억</span>달성
             </motion.h2>
 
-            <motion.p className="text-white font-bold text-4xl lg:text-5xl mt-24" variants={fadeInUp}>
-              <span className="text-[#F93333]">월 매출 200%</span> 달성
+            <motion.p className="text-white font-bold text-4xl lg:text-5xl mt-16 md:mt-24 break-keep" variants={fadeInUp}>
+              <span className="text-[#F93333]">월 매출 200%</span>
               <br />맛 100% 보장 브랜드
             </motion.p>
             <motion.div variants={fadeInUp}>
@@ -83,8 +83,8 @@ export default function page() {
       </section>
 
       <section className="bg-[url('/images/hero_bg2.png')] bg-cover bg-center bg-no-repeat ">
-        <motion.div className="w-full rounded-t-xl relative h-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeIn}>
-          <Image src={"/images/top_Image.png"} alt={"지붕"} fill className="absolute top-24 z-10 rounded-t-xl" />
+        <motion.div className="w-full h-32 relative overflow-hidden rounded-t-xl" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeIn}>
+          <Image src="/images/top_Image.png" alt="지붕" fill className="object-cover object-bottom" />
         </motion.div>
 
         <div className="bg-[url('/images/brand_bg_01.png')] bg-cover bg-center bg-no-repeat py-20 md:py-48 px-4">
@@ -99,10 +99,12 @@ export default function page() {
               <Image src={"/images/logo_01.png"} alt="문어전복갈비찜로고" width={100} height={100} />
               <h2 className="text-center break-keep">마시마니 문어&전복갈비찜전문점 창업경쟁력</h2>
             </div>
-            <p className="text-red-600 text-4xl font-bold hidden md:block">{">"}</p>
+            <Link href={"/masimani/octopus"}>
+              <p className="text-red-600 text-4xl font-bold hidden md:block">{">"}</p>
+            </Link>
           </motion.div>
           <motion.div
-            className="cardList max-w-[1440px] mx-auto grid grid-cols-2 md:grid-cols-4  gap-4 my-10"
+            className="cardList max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 my-10"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -158,10 +160,12 @@ export default function page() {
               <Image src={"/images/logo_02.png"} alt="문어전복갈비찜로고" width={100} height={100} />
               <h2 className="text-center break-keep">마시마니 흑염소요리전문점 창업경쟁력</h2>
             </div>
-            <p className="text-red-600 text-4xl font-bold hidden md:block">{">"}</p>
+            <Link href={"/masimani/goat"}>
+              <p className="text-red-600 text-4xl font-bold hidden md:block">{">"}</p>
+            </Link>
           </motion.div>
           <motion.div
-            className="cardList  max-w-[1440px] mx-auto grid grid-cols-2 md:grid-cols-4  gap-4 my-10"
+            className="cardList  max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 my-10"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}

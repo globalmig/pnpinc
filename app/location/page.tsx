@@ -88,7 +88,13 @@ export default function LocationPage() {
               <div className="text-white text-lg">등록된 지점이 없습니다.</div>
             </motion.div>
           ) : (
-            <motion.div className="my-14 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4" variants={staggerWrap} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
+            <motion.div
+              className="my-14 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4"
+              variants={staggerWrap}
+              initial="hidden"
+              animate={!loading ? "show" : "hidden"} // loading이 끝나면 show
+              key={branches.length} // 데이터가 변경되면 애니메이션 재실행
+            >
               {branches.map((branch) => (
                 <motion.div key={branch.id} variants={fadeUp} whileHover={{ y: -6, transition: { duration: 0.2 } }}>
                   <Card name={branch.name} locationTitle={branch.name} phone={branch.phone} link={branch.map_link} address={branch.location} />

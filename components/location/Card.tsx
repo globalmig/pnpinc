@@ -10,7 +10,7 @@ type LocationProp = {
 
 export default function LocationCard({ name, locationTitle = "매장 위치", address, phone, link }: LocationProp) {
   return (
-    <div className="w-full bg-white rounded-2xl border-2 border-black/20 shadow-[0_0_0_2px_rgba(0,0,0,0.15)] p-8 ">
+    <div className="w-full bg-white rounded-2xl  border-black/20 shadow-[0_0_0_2px_rgba(0,0,0,0.15)] p-8 h-72">
       {/* ✅ 텍스트 래퍼에 w-full + text-center */}
       <div className="w-full text-center h-[60%]">
         <h2 className="text-3xl font-extrabold tracking-tight">{name}</h2>
