@@ -4,18 +4,21 @@ import { cookies } from "next/headers";
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
 
-function checkAuth() {
-  const session = cookies().get("admin_session");
+type Ctx = { params: Promise<{ id: string }> };
+
+async function checkAuth() {
+  const session = (await cookies()).get("admin_session");
   return session?.value === "authenticated";
 }
 
 // GET: 단일 항목 조회
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(request: NextRequest, context: Ctx) {
+  const { id } = await context.params;
   if (!checkAuth()) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { data, error } = await supabase.from("notices").select("*").eq("id", params.id).single();
+  const { data, error } = await supabase.from("notices").select("*").eq("id", id).single();
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
@@ -25,7 +28,8 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
 }
 
 // PUT: 항목 수정
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest, context: Ctx) {
+  const { id } = await context.params;
   if (!checkAuth()) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -33,7 +37,7 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
   const body = await request.json();
   const { title, description, posted_at, image_links } = body;
 
-  const { data, error } = await supabase.from("notices").update({ title, description, posted_at, image_links }).eq("id", params.id).select().single();
+  const { data, error } = await supabase.from("notices").update({ title, description, posted_at, image_links }).eq("id", id).select().single();
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
@@ -43,12 +47,13 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
 }
 
 // DELETE: 항목 삭제
-export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest, context: Ctx) {
+  const { id } = await context.params;
   if (!checkAuth()) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { error } = await supabase.from("notices").delete().eq("id", params.id);
+  const { error } = await supabase.from("notices").delete().eq("id", id);
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });

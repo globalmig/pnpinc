@@ -9,7 +9,10 @@ export async function POST(request: NextRequest) {
 
     if (password === ADMIN_PASSWORD) {
       // 쿠키에 세션 토큰 저장
-      cookies().set("admin_session", "authenticated", {
+      (
+        await // 쿠키에 세션 토큰 저장
+        cookies()
+      ).set("admin_session", "authenticated", {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         sameSite: "strict",
