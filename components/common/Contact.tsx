@@ -85,26 +85,26 @@ export default function SalesConsultationLayout() {
         <div className="absolute inset-0 bg-cover bg-center opacity-100 bg-[url('/images/bg_contact.png')] bg-no-repeat" />
 
         <div className="relative z-10 h-full flex flex-col justify-center items-start p-8 md:p-16 text-white text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4 leading-tight break-keep">
             저희가 매출을
             <br />
             올려드리겠습니다!
           </h2>
 
-          <div className="mt-12">
+          <div className="mt-4 md:mt-12">
             <p className="text-2xl md:text-4xl mb-6">
               <span className="text-white">문의 </span>
               <span className="text-red-500 font-bold">'즉시'</span>
-              <span className="text-white"> 상담 가능합니다.</span>
+              <span className="text-white break-keep"> 상담 가능합니다.</span>
             </p>
 
-            <div className="flex items-center gap-4 mt-12">
-              <div className="bg-red-500 rounded-full p-3">
+            <div className="flex items-center gap-4 mt-12 text-center">
+              <div className="bg-red-500 rounded-full p-3 md:block hidden">
                 <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
               </div>
-              <span className="text-3xl md:text-4xl font-bold">02-400-1230</span>
+              <span className="text-3xl md:text-4xl font-bold break-keep w-full">02-400-1230</span>
             </div>
           </div>
         </div>
@@ -190,7 +190,7 @@ export default function SalesConsultationLayout() {
           <button type="button" aria-label="닫기" className="absolute inset-0 bg-black/50" onClick={() => setOpenPolicy(false)} />
 
           {/* 모달 본문 */}
-          <div className="relative z-10 w-[92%] max-w-2xl max-h-[80vh] overflow-hidden rounded-2xl bg-white shadow-xl">
+          <div className="relative z-10 w-[92%] max-w-2xl overflow-hidden rounded-2xl bg-white shadow-xl">
             <div className="flex items-center justify-between px-6 py-4 border-b">
               <h3 id="privacy-title" className="text-lg font-bold text-gray-900">
                 개인정보 처리방침
