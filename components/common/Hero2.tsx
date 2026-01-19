@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollIndicator from "./ScrollIndicator";
 
 interface HeroProp {
   bg: string;
@@ -11,20 +12,21 @@ interface HeroProp {
 
 export default function Hero2(item: HeroProp) {
   return (
-    <section className=" bg-cover bg-center bg-no-repeat text-white h-[640px]" style={{ backgroundImage: `url(${item.bg})` }}>
+    <section className="relative bg-cover bg-center bg-no-repeat text-white h-[640px]" style={{ backgroundImage: `url(${item.bg})` }}>
       <div className="w-full max-w-[1440px] relative mx-auto">
-        <div className="text-center md:p-0 pt-44 md:absolute md:right-40 md:top-72">
-          <h2 className="text-6xl">{item.title}</h2>
+        <div className="text-center md:p-0  pt-44  md:absolute md:right-40 md:top-52">
+          <h2 className="text-5xl md:text-6xl">{item.title}</h2>
           <div className="flex w-full justify-center">
-            <h2 className="text-6xl text-red-500 text-center">{item.highlightText}</h2>
-            {item.title2 && <h2 className="text-6xl">{item.title2}</h2>}
+            <h2 className="text-5xl md:text-6xl text-red-500 text-center">{item.highlightText}</h2>
+            {item.title2 && <h2 className="text-5xl md:text-6xl">{item.title2}</h2>}
           </div>
           <div className="mt-4 opacity-80">
-            <p className="text-2xl">{item.description}</p>
-            <p className="text-2xl">{item.description2}</p>
+            <p className="text-lg md:text-2xl">{item.description}</p>
+            <p className="text-lg md:text-2xl">{item.description2}</p>
           </div>
         </div>
       </div>
+      <ScrollIndicator className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 text-center " />
     </section>
   );
 }

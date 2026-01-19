@@ -5,6 +5,7 @@ import React from "react";
 import Image from "next/image";
 import Contact from "@/components/common/Contact";
 import { motion, Variants } from "framer-motion";
+import ScrollIndicator from "@/components/common/ScrollIndicator";
 
 export default function page() {
   // 애니메이션 variants
@@ -56,12 +57,12 @@ export default function page() {
   return (
     <>
       <section className="bg-[url('/images/hero_bg2.png')] bg-cover bg-center bg-no-repeat">
-        <div className="w-full max-w-[1440px] mx-auto relative h-[640px]">
+        <div className="w-full max-w-[1440px] mx-auto relative h-[640px] md:h-[800px]">
           <motion.div className="absolute right-10 top-[180px] -translate-y-1/2" initial="hidden" animate="visible" variants={slideInRight}>
             <Image src="/images/main_logo.png" alt="문어전복갈비찜로고" width={480} height={480} className="hidden md:block" />
           </motion.div>
 
-          <motion.div className="main-text text-center pt-44 md:p-0 px-4 md:absolute md:top-60 md:left-10" initial="hidden" animate="visible" variants={staggerContainer}>
+          <motion.div className="main-text text-center md:text-start pt-44 md:p-0 px-4 md:absolute md:top-60 md:left-10" initial="hidden" animate="visible" variants={staggerContainer}>
             <motion.h2 className="text-white font-bold text-[40px] md:text-[80px] lg:text-[100px]" variants={fadeInUp}>
               월 <span className="text-[#F93333] pr-2">매출 1억</span>달성
             </motion.h2>
@@ -70,8 +71,9 @@ export default function page() {
               <span className="text-[#F93333]">월 매출 200%</span>
               <br />맛 100% 보장 브랜드
             </motion.p>
+
             <motion.div variants={fadeInUp}>
-              <Link href="/" className="border-white hover:border-[#F93333] border py-2 px-20 rounded-md inline-flex items-center gap-2 font-medium text-white hover:bg-[#F93333] transition mt-20">
+              <Link href="/" className="border-white hover:border-[#F93333] border py-2 px-20 rounded-md inline-flex items-center gap-2 font-medium text-white hover:bg-[#F93333] transition mt-12">
                 문의하기
                 <span aria-hidden="true" className="text-[#F93333]">
                   &gt;
@@ -79,6 +81,9 @@ export default function page() {
               </Link>
             </motion.div>
           </motion.div>
+
+          {/* ✅ 히어로 div 기준 하단 중앙 */}
+          <ScrollIndicator className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 text-center " />
         </div>
       </section>
 

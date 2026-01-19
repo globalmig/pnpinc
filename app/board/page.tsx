@@ -75,9 +75,9 @@ export default function BoardListPage() {
 
   if (loading) {
     return (
-      <div className="bg-white px-4">
+      <div className="bg-white">
         <Hero2 bg="/images/board_bg.png" title="마시마니" highlightText="공지사항" title2="" description="마시마니의 새로운 소식을" description2="확인해보세요" />
-        <div className="max-w-6xl mx-auto py-10 min-h-screen flex items-center justify-center">
+        <div className="max-w-6xl mx-auto py-10 min-h-screen flex items-center justify-center px-4">
           <div className="text-gray-500">로딩 중...</div>
         </div>
       </div>
@@ -85,7 +85,7 @@ export default function BoardListPage() {
   }
 
   return (
-    <div className="bg-white ">
+    <div className="bg-white">
       <Hero2 bg="/images/board_bg.png" title="마시마니" highlightText="공지사항" title2="" description="마시마니의 새로운 소식을" description2="확인해보세요" />
       <div className="max-w-6xl mx-auto py-10 px-4">
         {/* 테이블 */}
@@ -97,10 +97,9 @@ export default function BoardListPage() {
               {/* 헤더 */}
               <thead>
                 <tr className="border-t-2 border-b border-gray-300">
-                  {/* <th className="py-4 px-6 text-left text-sm font-medium text-gray-900">번호</th> */}
-                  <th className="py-4 px-6 text-left text-sm font-medium text-gray-900"></th>
-                  <th className="py-4 px-6 text-center text-sm font-medium text-gray-900">제목</th>
-                  <th className="py-4 px-6 text-right text-sm font-medium text-gray-900">등록일</th>
+                  <th className="py-4 px-2 md:px-6 text-left text-sm font-medium text-gray-900 w-12 md:w-16"></th>
+                  <th className="py-4 px-2 md:px-6 text-center text-sm font-medium text-gray-900">제목</th>
+                  <th className="py-4 px-2 md:px-6 text-right text-sm font-medium text-gray-900 w-20 md:w-28">등록일</th>
                 </tr>
               </thead>
 
@@ -114,12 +113,27 @@ export default function BoardListPage() {
                       onClick={() => handleRowClick(notice.id)}
                       className={`border-b border-gray-200 cursor-pointer hover:bg-gray-50 transition-colors ${index % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
                     >
-                      {/* <td className="py-4 px-6 text-sm text-gray-900">{displayNumber}</td> */}
-                      <td className="py-4 px-6 text-sm text-gray-900">
-                        <Image src={"/images/logo.png"} alt="마시마니로고" width={40} height={40} />
+                      <td className="py-4 px-2 md:px-6 text-sm text-gray-900">
+                        <div className="w-8 h-8 md:w-10 md:h-10 relative">
+                          <Image src={"/images/logo.png"} alt="마시마니로고" fill className="object-contain" />
+                        </div>
                       </td>
-                      <td className="py-4 px-6 text-sm text-center text-gray-900">{notice.title}</td>
-                      <td className="py-4 px-6 text-sm text-right text-gray-900">{new Date(notice.posted_at).toLocaleDateString("ko-KR")}</td>
+                      <td className="py-4 px-2 md:px-6 text-sm text-center text-gray-900 truncate max-w-0">{notice.title}</td>
+                      <td className="py-4 px-2 md:px-6 text-xs md:text-sm text-right text-gray-900 whitespace-nowrap">
+                        <span className="md:hidden">
+                          {new Date(notice.posted_at).toLocaleDateString("ko-KR", {
+                            year: "2-digit",
+                            month: "2-digit",
+                          })}
+                        </span>
+                        <span className="hidden md:inline">
+                          {new Date(notice.posted_at).toLocaleDateString("ko-KR", {
+                            year: "2-digit",
+                            month: "2-digit",
+                            day: "2-digit",
+                          })}
+                        </span>
+                      </td>
                     </tr>
                   );
                 })}
@@ -130,17 +144,21 @@ export default function BoardListPage() {
 
         {/* 페이지네이션 */}
         {totalPages > 1 && (
-          <div className="mt-8 flex justify-center gap-2">
+          <div className="mt-8 flex justify-center gap-1 md:gap-2">
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-2 md:px-4 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               이전
             </button>
 
             {getPageNumbers().map((page) => (
-              <button key={page} onClick={() => handlePageChange(page)} className={`px-4 py-2 rounded ${currentPage === page ? "bg-red-600 text-white" : "border border-gray-300 hover:bg-gray-50"}`}>
+              <button
+                key={page}
+                onClick={() => handlePageChange(page)}
+                className={`px-3 md:px-4 py-2 text-sm rounded ${currentPage === page ? "bg-red-600 text-white" : "border border-gray-300 hover:bg-gray-50"}`}
+              >
                 {page}
               </button>
             ))}
@@ -148,7 +166,7 @@ export default function BoardListPage() {
             <button
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-2 md:px-4 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               다음
             </button>
