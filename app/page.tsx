@@ -56,12 +56,12 @@ export default function page() {
   return (
     <>
       <section className="bg-[url('/images/hero_bg2.png')] bg-cover bg-center bg-no-repeat">
-        <div className="w-full max-w-[1440px] mx-auto relative h-[800px]">
+        <div className="w-full max-w-[1440px] mx-auto relative h-[640px]">
           <motion.div className="absolute right-10 top-[180px] -translate-y-1/2" initial="hidden" animate="visible" variants={slideInRight}>
             <Image src="/images/main_logo.png" alt="문어전복갈비찜로고" width={480} height={480} className="hidden md:block" />
           </motion.div>
 
-          <motion.div className="main-text text-center pt-56 md:p-0 px-4 md:absolute md:top-60 md:left-10" initial="hidden" animate="visible" variants={staggerContainer}>
+          <motion.div className="main-text text-center pt-44 md:p-0 px-4 md:absolute md:top-60 md:left-10" initial="hidden" animate="visible" variants={staggerContainer}>
             <motion.h2 className="text-white font-bold text-[40px] md:text-[80px] lg:text-[100px]" variants={fadeInUp}>
               월 <span className="text-[#F93333] pr-2">매출 1억</span>달성
             </motion.h2>
