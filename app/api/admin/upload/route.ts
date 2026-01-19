@@ -6,8 +6,8 @@ const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env
 
 const BUCKET_NAME = process.env.NEXT_PUBLIC_SUPABASE_BUCKET || "board-images";
 
-function checkAuth() {
-  const session = cookies().get("admin_session");
+async function checkAuth() {
+  const session = (await cookies()).get("admin_session");
   return session?.value === "authenticated";
 }
 
